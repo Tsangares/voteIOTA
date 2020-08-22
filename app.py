@@ -18,9 +18,18 @@ def voting():
     name = request.form['name']
     identity = request.form['id']
     candidate = request.form['candidate']
-    location = request.form['location']
+    state = request.form['location']
+    locations = json.load(open('states.json'))
+    location = locations[state]
     transaction = vote(name,identity,candidate,location).transactions[0].hash
-    return render_template('vote.html',name=name,identity=identity,candidate=candidate,location=location,transaction=transaction)
+    tally = json.load(open('votes.json'))
+    if candidate not in tally[state]:
+        tally[state][candidate]=1
+    else:
+        tally[state][candidate]+=1
+    json.dump(tally,open('votes.json','w+'))
+    total = totalVotes(tally)
+    return render_template('vote.html',name=name,identity=identity,candidate=candidate,location=location,transaction=transaction,tally=tally.items(),total=total.items())
 
 @app.route('/addresses', methods=['GET'])
 def addresses():

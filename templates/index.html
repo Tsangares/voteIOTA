@@ -27,7 +27,7 @@
 	<select id="location" name="location" required>
 	  {% for name,address in locations: %}
 	  {% set len = 30-name|length %}
-	  <option value="{{address}}">{{name}}: {{address[:len]}}...
+	  <option value="{{name}}">{{name}}: {{address[:len]}}...
 	  </option>
 	  {% endfor %}
 	</select>
@@ -43,7 +43,7 @@
       <div>
 	<span>Your "Identitiy" never leaves your computer. Instead, the "Hashed Identity" is sent to the server, and then the ledger. This protects your identity through obfiscation but allows your identity to be verified.</span>
       </div>
-      <input type="submit" text="Submit to Ledger (takes about a minuite)">
+      <input type="submit" value="Submit to Ledger (takes about a minuite)">
     </form>
     <div id="total">
       <h4>Current Total</h4>

@@ -23,6 +23,31 @@
       <span id="result"></span>
       <span id="hash-output"></span>
     </div>
+    <div id="total">
+      <h4>Current Total</h4>
+      {% for candidate,count in total %}
+      <div class="candidate">
+	<span>{{candidate}}</span>
+	<span>{{count}}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <div id="tally">
+      {% for state, vote in tally %}
+      <div class="state">
+	<h4>{{state}}</h4>
+	<div>
+	  {% for candidate,count in vote.items() %}
+	  <div class="candidate">
+	    <span>{{candidate}}</span>
+	    <span>{{count}}</span>
+	  </div>
+	  {% endfor %}
+	</div>
+      </div>
+      {% endfor %}
+    </div>
+
     <script>
       const update = ()=>{
 	  const input = document.getElementById('hash-input').value;
