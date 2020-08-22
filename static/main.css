@@ -1,0 +1,33 @@
+body,html{
+    background-color: #F2EECB;
+    font-family: sans-serif;
+    height: 100%;
+    text-align:center;
+}
+form,#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+form>*{
+    margin: .5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+}
+form>*>*{
+}
+form>*>input{
+    margin-left: 1rem;
+    flex-grow: 1;
+}
+#content{
+    justify-content: space-evenly;
+}
+#location{
+    font-family: monospace;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vote</title>
+    <script type="text/javascript" src="/static/bower_components/crypto-js/crypto-js.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+  </head>
+  <body>
+    <h1>The Ballot</h1>
+    <form action='/vote' enctype="multipart/form-data" method="post">
+      <div>
+	<label for="name">Full Name: </label>
+	<input type="text" placeholder="John Doe" name="name" required>
+      </div>
+      <div>
+	<div>
+	  <label for="biden">Biden</label>
+	  <input type="radio" id="biden" name="candidate" value="biden" required>
+	</div>
+	<div>
+	  <label for="trump">Trump</label>
+	  <input type="radio" id="trump" name="candidate" value="trump" required>
+	</div>
+      </div>
+      <div>
+	<label for="location">Location or Province: </label>
+	<select id="location" name="location" required>
+	  {% for location in locations: %}
+	  {% set len = 30-location.name|length %}
+	  <option value="{{location.address}}">{{location.name}}: {{location.address[:len]}}...
+	  </option>
+	  {% endfor %}
+	</select>
+      </div>
+      <div>
+	<label for="id">Identity (put a random number or word you can remember):</label>
+	<input type="text" id="hash-input" placeholder="123-123-1234" onkeypress="update()" required>
+      </div>
+      <div>
+	<span>Hashed Identity (SHA256): </span>
+	<input type="text" name="id" readonly="readonly" id="hash-output"></input>
+      </div>
+      <div>
+	<span>Your "Identitiy" never leaves your computer. Instead, the "Hashed Identity" is sent to the server, and then the ledger. This protects your identity through obfiscation but allows your identity to be verified.</span>
+      </div>
+      <input type="submit" text="Submit to Ledger (takes about a minuite)">
+    </form>
+    <span id="output"></span>
+    <script>
+      const update = ()=>{
+	  const input = document.getElementById('hash-input').value;
+	  const hash = CryptoJS.SHA256(input);
+	  document.getElementById('hash-output').value = hash;
+      }
+    </script>
+  </body>
+</html>

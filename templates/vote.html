@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voted</title>
+    <script type="text/javascript" src="/static/bower_components/crypto-js/crypto-js.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+  </head>
+  <body>
+    <div id="content">
+      <div>
+	<span>{{name}} voted for {{candidate}}.</span>
+      </div>
+      <a target="_blank" href="https://thetangle.org/address/{{location}}">Check out your states votes.</a>
+      <a target="_blank" href="https://thetangle.org/transaction/{{transaction}}">Check out your vote!</a>
+      <div>
+	<span>Your real identity was never sent to the server, only your identity hash: </span>
+      </div>
+      <span>{{identity}}</span>
+      <div>
+	<span>To verify that this has is correct, you can retype your identity here: </span>
+	<input type="text" onkeypress="update()" id="hash-input">
+      </div>
+      <span id="result"></span>
+      <span id="hash-output"></span>
+    </div>
+    <script>
+      const update = ()=>{
+	  const input = document.getElementById('hash-input').value;
+	  const hash = CryptoJS.SHA256(input);
+	  document.getElementById('hash-output').innerHTML = hash;
+	  const result = document.getElementById('result');
+	  if("{{identity}}" == hash){
+	      result.innerHTML = "VALID IDENTITY!";
+	      result.style.color = "cornflowerblue";
+	  }else{
+	      result.innerHTML = "INVALID IDENTITY!";
+	      result.style.color = "red";
+	  }
+      }
+    </script>
+  </body>
+</html>
