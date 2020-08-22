@@ -25,15 +25,15 @@
       <div>
 	<label for="location">Location or Province: </label>
 	<select id="location" name="location" required>
-	  {% for location in locations: %}
-	  {% set len = 30-location.name|length %}
-	  <option value="{{location.address}}">{{location.name}}: {{location.address[:len]}}...
+	  {% for name,address in locations: %}
+	  {% set len = 30-name|length %}
+	  <option value="{{address}}">{{name}}: {{address[:len]}}...
 	  </option>
 	  {% endfor %}
 	</select>
       </div>
       <div>
-	<label for="id">Identity (put a random number or word you can remember):</label>
+	<label for="id">Identity (put a random word or number you can remember):</label>
 	<input type="text" id="hash-input" placeholder="123-123-1234" onkeypress="update()" required>
       </div>
       <div>
@@ -45,7 +45,30 @@
       </div>
       <input type="submit" text="Submit to Ledger (takes about a minuite)">
     </form>
-    <span id="output"></span>
+    <div id="total">
+      <h4>Current Total</h4>
+      {% for candidate,count in total %}
+      <div class="candidate">
+	<span>{{candidate}}</span>
+	<span>{{count}}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <div id="tally">
+      {% for state, vote in tally %}
+      <div class="state">
+	<h4>{{state}}</h4>
+	<div>
+	  {% for candidate,count in vote.items() %}
+	  <div class="candidate">
+	    <span>{{candidate}}</span>
+	    <span>{{count}}</span>
+	  </div>
+	  {% endfor %}
+	</div>
+      </div>
+      {% endfor %}
+    </div>
     <script>
       const update = ()=>{
 	  const input = document.getElementById('hash-input').value;

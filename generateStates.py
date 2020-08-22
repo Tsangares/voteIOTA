@@ -63,7 +63,7 @@ states = [
 ]
 
 with open('states.json','w+') as f:
-    out = [{'name': state, 'address': str(addr)} for state,addr in zip(states,addresses)]
+    out = {state: str(addr) for state,addr in zip(states,addresses)}
     json.dump(out,f)
 
 

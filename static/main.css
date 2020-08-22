@@ -10,7 +10,6 @@ form,#content{
     justify-content: normal;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
 form>*{
     margin: .5rem;
@@ -26,8 +25,34 @@ form>*>input{
     flex-grow: 1;
 }
 #content{
+    height: 100%;
     justify-content: space-evenly;
 }
 #location{
     font-family: monospace;
+}
+#tally{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.state{
+    margin: 1rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0;
+    background-color: #00000010;
+    border-radius: .25rem;
+}
+.candidate{
+    font-family: mono;
+    color: #000000CC;
+}
+#total{
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #00000010;
+    border-radius: .25rem;
 }
