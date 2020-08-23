@@ -23,6 +23,8 @@ def voting():
     location = locations[state]
     transaction = vote(name,identity,candidate,location).transactions[0].hash
     tally = json.load(open('votes.json'))
+    if state not in tally:
+        tally[state] = {}
     if candidate not in tally[state]:
         tally[state][candidate]=1
     else:
