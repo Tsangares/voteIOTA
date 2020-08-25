@@ -16,7 +16,7 @@ There is a live version of this application located at https://vote.ekay.com/
 
 # Context
 
-Currently in the United States the Postmaster of the U.S. Postal Service has been appointed by Donald Trump to [Louis DeJoy](https://www.cbsnews.com/news/louis-dejoy-trump-republican-donor-usps/). In his first acts he has removed worker overtime and [decomissioned 671 high-volume sorting machines](https://www.washingtontimes.com/news/2020/aug/21/dejoy-usps-not-return-decommissioned-sorting/). Because of the upcoming election and also coronavirus, it is expected to have a lot of mail-in voting. There is worry that the U.S. Postal service will be unfit to correctly process the ballots. 
+Currently in the United States the Postmaster of the U.S. Postal Service has been reappointed by [Donald Trump](https://youtu.be/MGB0N-0o6Do) to [Louis DeJoy](https://www.cbsnews.com/news/louis-dejoy-trump-republican-donor-usps/). In Louis DeJoy's first acts he has [removed the majority of worker overtime](https://www.cnn.com/2020/08/24/politics/usps-dejoy-misleading-testimony-overtime-fact-check/index.html) and [decomissioned 671 high-volume sorting machines](https://www.washingtontimes.com/news/2020/aug/21/dejoy-usps-not-return-decommissioned-sorting/). Because of the upcoming election and also coronavirus, it is expected to have a lot of mail-in voting. [There is worry](https://youtu.be/MGB0N-0o6Do) that the U.S. Postal service will be unfit to correctly process the ballots. 
 
 # Purpose
 
