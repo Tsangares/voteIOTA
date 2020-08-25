@@ -4,7 +4,7 @@ import math,hashlib,json
 
 # Helper function to get a default api
 def getApi(node='https://nodes.iota.org:443') -> Iota:
-    return Iota(adapter = 'https://nodes.iota.org:443')
+    return Iota(adapter = node)
 
 # This will convert the vote strings to an IOTA transaction
 def getTx(text:str, address:Address) -> ProposedTransaction:
