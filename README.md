@@ -1,6 +1,6 @@
 # Installation
 
-It is reccomended to use a python virtual environment. Once it is setup, install the dependencies using:
+It is recommended to use a python virtual environment. Once it is setup, install the dependencies using:
 
     pip install -r requirements.txt
 	
@@ -20,7 +20,7 @@ Currently in the United States the Postmaster of the U.S. Postal Service has bee
 
 # Purpose
 
-This application is to show the ease of creating an online voting system utalizing DLT for security and transparency. By using IOTA this program is able to easily be both public and immutable, allowing no vote to be lost. The whole voting aspet is extremly straightforward; the main challenge with this approach to the voting system is the identity portion of the vote. In this proof of concept, I simply hash a passphrase that holds as the identity of the user. To use this application in a more secure way, the idendity needs to hold ideally the following three utilities:
+This application is to show the ease of creating an online voting system utilizing DLT for security and transparency. By using IOTA this program is able to easily be both public and immutable, allowing no vote to be lost. The whole voting aspect is extremely straightforward; the main challenge with this approach to the voting system is the identity portion of the vote. In this proof of concept, I simply hash a passphrase that holds as the identity of the user. To use this application in a more secure way, the identity needs to hold ideally the following three utilities:
 
  - Unique to each registered voter
  - Verifiable by either the public or the government
@@ -30,4 +30,4 @@ Potentially the identity could be as simple as a social security number. This ap
 
 The best approach would be an identity verification on a government website or the DMV that takes several forms of identity (like the Real ID application), and it will issue a certificate on the ledger. This certificate can be as simple as a cryptographic signature from the US government on an IOTA address owned by the user. In order for the user to prove ownership of the address and prove that they are a registered voter, they simply spend from the address to two output addresses, one that they own (so they can spend it again), and to the voting platform issuing a verifiable vote by not only the U.S. Government, but also the public.
 
-This could be expanded on in so many ways and varieties. But ultimatly, voting with the ledger is extremtly easy and opens so many doors for secure voting platform.
+This could be expanded on in so many ways and varieties. But ultimatley, voting with the ledger is extremely easy and opens so many doors for a secure voting platform.
