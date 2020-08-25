@@ -10,7 +10,7 @@ Then you can run the flask server by being the project's root directory and exec
 	
 # Summary
 
-This project contains a flask app that uses the python files located at `flask/vote` to communicate with the IOTA ledger.
+This project contains a flask app that uses the python file located at `flask/vote/vote.py` to communicate with the IOTA ledger.
 
 There is a live version of this application located at https://vote.ekay.com/
 
